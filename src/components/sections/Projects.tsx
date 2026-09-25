@@ -27,10 +27,10 @@ export function Projects() {
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-start max-w-2xl mb-12 sm:mb-16">
-          <span className="font-mono text-xs text-accent tracking-wider uppercase mb-3">
+          <span className="font-mono text-xs text-pine tracking-wider uppercase mb-3">
             // Selected Work
           </span>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-text-primary tracking-tight leading-snug mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-pine tracking-tight leading-snug mb-4">
             Projects built around data, systems, and practical problems.
           </h2>
           <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
@@ -46,7 +46,7 @@ export function Projects() {
             return (
               <article
                 key={project.id}
-                className="group p-6 sm:p-8 lg:p-10 rounded-2xl md:rounded-[28px] border border-border-subtle bg-surface hover:border-accent/30 transition-all duration-300 shadow-xl overflow-hidden"
+                className="group p-6 sm:p-8 lg:p-10 rounded-2xl md:rounded-[28px] border border-border-subtle bg-surface hover:border-soft-green transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden"
               >
                 <div
                   className={`flex flex-col ${
@@ -58,18 +58,18 @@ export function Projects() {
                     <div>
                       {/* Category & Featured Badge */}
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="font-mono text-xs text-accent uppercase tracking-wider">
+                        <span className="font-mono text-xs text-pine font-medium uppercase tracking-wider">
                           {project.category}
                         </span>
                         {project.featured && (
-                          <span className="font-mono text-[10px] text-accent bg-accent/10 border border-accent/20 px-2 py-0.5 rounded">
+                          <span className="font-mono text-[10px] text-pine font-medium bg-eucalyptus border border-border-subtle px-2 py-0.5 rounded">
                             Featured Project
                           </span>
                         )}
                       </div>
 
                       {/* Project Title */}
-                      <h3 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-primary tracking-tight mb-4 group-hover:text-accent transition-colors">
+                      <h3 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-pine tracking-tight mb-4 group-hover:text-pine/80 transition-colors">
                         {project.title}
                       </h3>
 
@@ -83,7 +83,7 @@ export function Projects() {
                         {project.capabilities.map((cap) => (
                           <span
                             key={cap}
-                            className="px-2.5 py-1 text-xs font-mono rounded bg-surface-elevated text-text-secondary border border-border-subtle"
+                            className="px-2.5 py-1 text-xs font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
                           >
                             {cap}
                           </span>
@@ -98,7 +98,7 @@ export function Projects() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-white bg-accent hover:bg-accent-hover transition-colors focus-visible:outline-2 focus-visible:outline-focus"
+                          className="inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-white bg-pine hover:bg-pine-hover transition-colors shadow-xs focus-visible:outline-2 focus-visible:outline-focus"
                           aria-label={`View live project for ${project.title}`}
                         >
                           <span>Live Project</span>
@@ -111,7 +111,7 @@ export function Projects() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-text-secondary hover:text-text-primary border border-border-subtle bg-surface-elevated hover:bg-surface-elevated/80 transition-colors focus-visible:outline-2 focus-visible:outline-focus"
+                          className="inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-pine hover:text-pine-hover border border-border-subtle bg-eucalyptus/30 hover:bg-eucalyptus/60 transition-colors focus-visible:outline-2 focus-visible:outline-focus"
                           aria-label={`View GitHub repository for ${project.title}`}
                         >
                           <GithubIcon className="w-4 h-4 mr-2 text-text-tertiary" />
@@ -123,13 +123,13 @@ export function Projects() {
 
                   {/* Project Screenshot / Visual Window Side */}
                   <div className="flex-1 w-full">
-                    <div className="rounded-xl overflow-hidden border border-border-subtle/80 bg-surface-elevated shadow-2xl transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-accent/5">
+                    <div className="rounded-xl overflow-hidden border border-border-subtle bg-surface shadow-md transition-all duration-300 group-hover:border-soft-green">
                       {/* Window Header Frame */}
-                      <div className="px-4 py-2.5 bg-background/80 border-b border-border-subtle flex items-center justify-between">
+                      <div className="px-4 py-2.5 bg-eucalyptus/50 border-b border-border-subtle flex items-center justify-between">
                         <div className="flex items-center gap-1.5">
-                          <span className="w-2.5 h-2.5 rounded-full bg-border-base" />
-                          <span className="w-2.5 h-2.5 rounded-full bg-border-base" />
-                          <span className="w-2.5 h-2.5 rounded-full bg-border-base" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-soft-border" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-soft-border" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-soft-border" />
                         </div>
                         <span className="font-mono text-[10px] text-text-tertiary truncate max-w-[200px]">
                           {project.liveUrl ? new URL(project.liveUrl).hostname : project.title}
@@ -144,7 +144,7 @@ export function Projects() {
                           rel="noopener noreferrer"
                           tabIndex={-1}
                           aria-hidden="true"
-                          className="block relative overflow-hidden aspect-[16/10] bg-surface"
+                          className="block relative overflow-hidden aspect-[16/10] bg-porcelain"
                         >
                           <img
                             src={project.image}
@@ -154,7 +154,7 @@ export function Projects() {
                           />
                         </a>
                       ) : (
-                        <div className="relative overflow-hidden aspect-[16/10] bg-surface">
+                        <div className="relative overflow-hidden aspect-[16/10] bg-porcelain">
                           <img
                             src={project.image}
                             alt={project.imageAlt}

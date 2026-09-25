@@ -7,28 +7,28 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
   switch (pillarId) {
     case 'data-analysis':
       return (
-        <div className="mt-6 pt-5 border-t border-border-subtle/80 bg-surface-elevated/40 rounded-xl p-4 border border-border-subtle/50">
+        <div className="mt-6 pt-5 border-t border-border-subtle bg-eucalyptus/30 rounded-xl p-4 border border-border-subtle">
           <div className="flex items-center justify-between text-[11px] font-mono text-text-tertiary mb-3">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="w-1.5 h-1.5 rounded-full bg-soft-green" />
               Pipeline: Ingestion → Validation → Transformation
             </span>
-            <span className="text-accent/90">Status: Verified</span>
+            <span className="text-pine font-medium">Status: Verified</span>
           </div>
           <div className="grid grid-cols-3 gap-2 text-center font-mono">
-            <div className="p-2 rounded bg-surface border border-border-subtle/70">
+            <div className="p-2 rounded bg-surface border border-border-subtle">
               <span className="text-[10px] text-text-tertiary block">STAGE 01</span>
               <span className="text-xs font-semibold text-text-secondary mt-0.5 block">Raw Input</span>
               <span className="text-[10px] text-text-tertiary block mt-1">Schema Check</span>
             </div>
-            <div className="p-2 rounded bg-surface border border-border-subtle/70">
-              <span className="text-[10px] text-accent block">STAGE 02</span>
-              <span className="text-xs font-semibold text-text-primary mt-0.5 block">Clean &amp; Cast</span>
-              <span className="text-[10px] text-accent/80 block mt-1">Imputation</span>
+            <div className="p-2 rounded bg-surface border border-border-subtle">
+              <span className="text-[10px] text-pine block">STAGE 02</span>
+              <span className="text-xs font-semibold text-pine mt-0.5 block">Clean &amp; Cast</span>
+              <span className="text-[10px] text-text-tertiary block mt-1">Imputation</span>
             </div>
-            <div className="p-2 rounded bg-surface border border-accent/30 bg-accent/5">
-              <span className="text-[10px] text-accent block">STAGE 03</span>
-              <span className="text-xs font-semibold text-accent mt-0.5 block">Analytics DB</span>
+            <div className="p-2 rounded bg-surface border border-soft-green bg-soft-green/10">
+              <span className="text-[10px] text-pine block">STAGE 03</span>
+              <span className="text-xs font-semibold text-pine mt-0.5 block">Analytics DB</span>
               <span className="text-[10px] text-text-tertiary block mt-1">Clean &amp; Ready</span>
             </div>
           </div>
@@ -37,33 +37,31 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
 
     case 'business-intelligence':
       return (
-        <div className="mt-6 pt-5 border-t border-border-subtle/80 bg-surface-elevated/40 rounded-xl p-4 border border-border-subtle/50">
+        <div className="mt-6 pt-5 border-t border-border-subtle bg-eucalyptus/30 rounded-xl p-4 border border-border-subtle">
           <div className="flex items-center justify-between text-[11px] font-mono text-text-tertiary mb-3">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-soft-green" />
               KPI Horizon &amp; Performance View
             </span>
-            <span className="text-emerald-400 text-[10px]">Real-time Tracking</span>
+            <span className="text-pine font-medium text-[10px]">Active Tracking</span>
           </div>
           <div className="grid grid-cols-2 gap-3 mb-2.5">
-            <div className="p-2.5 rounded bg-surface border border-border-subtle/70">
-              <span className="text-[10px] font-mono text-text-tertiary block">DECISION VELOCITY</span>
+            <div className="p-2.5 rounded bg-surface border border-border-subtle">
+              <span className="text-[10px] font-mono text-text-tertiary block">REPORTING CADENCE</span>
               <div className="flex items-baseline gap-1.5 mt-1">
-                <span className="text-base font-bold font-display text-text-primary">+34.8%</span>
-                <span className="text-[10px] font-mono text-emerald-400">MoM</span>
+                <span className="text-sm font-bold font-display text-pine">Continuous Feed</span>
               </div>
-              <div className="w-full h-1 bg-border-subtle rounded-full mt-2 overflow-hidden">
-                <div className="w-4/5 h-full bg-accent rounded-full" />
+              <div className="w-full h-1.5 bg-eucalyptus rounded-full mt-2 overflow-hidden">
+                <div className="w-4/5 h-full bg-pine rounded-full" />
               </div>
             </div>
-            <div className="p-2.5 rounded bg-surface border border-border-subtle/70">
-              <span className="text-[10px] font-mono text-text-tertiary block">DATA RELIABILITY</span>
+            <div className="p-2.5 rounded bg-surface border border-border-subtle">
+              <span className="text-[10px] font-mono text-text-tertiary block">DATA VALIDATION</span>
               <div className="flex items-baseline gap-1.5 mt-1">
-                <span className="text-base font-bold font-display text-text-primary">99.4%</span>
-                <span className="text-[10px] font-mono text-accent">KPI Target</span>
+                <span className="text-sm font-bold font-display text-pine">Quality Checked</span>
               </div>
-              <div className="w-full h-1 bg-border-subtle rounded-full mt-2 overflow-hidden">
-                <div className="w-[99%] h-full bg-emerald-400 rounded-full" />
+              <div className="w-full h-1.5 bg-eucalyptus rounded-full mt-2 overflow-hidden">
+                <div className="w-full h-full bg-soft-green rounded-full" />
               </div>
             </div>
           </div>
@@ -72,13 +70,13 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
 
     case 'data-visualization':
       return (
-        <div className="mt-6 pt-5 border-t border-border-subtle/80 bg-surface-elevated/40 rounded-xl p-4 border border-border-subtle/50">
+        <div className="mt-6 pt-5 border-t border-border-subtle bg-eucalyptus/30 rounded-xl p-4 border border-border-subtle">
           <div className="flex items-center justify-between text-[11px] font-mono text-text-tertiary mb-2">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="w-1.5 h-1.5 rounded-full bg-soft-green" />
               Signal Distribution &amp; Trend Modeling
             </span>
-            <span className="text-text-tertiary text-[10px]">R² = 0.94</span>
+            <span className="text-text-tertiary text-[10px]">Fitted Curve</span>
           </div>
           <div className="h-20 w-full relative flex items-end pt-2">
             <svg
@@ -90,8 +88,8 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
             >
               <defs>
                 <linearGradient id="visGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="#7DAA91" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#7DAA91" stopOpacity="0.0" />
                 </linearGradient>
               </defs>
               <path
@@ -100,15 +98,15 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
               />
               <path
                 d="M0 52 C30 48, 60 58, 90 40 C120 22, 150 45, 180 30 C210 15, 240 28, 270 12 L300 8"
-                stroke="#3B82F6"
+                stroke="#25483C"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
-              <circle cx="270" cy="12" r="3.5" fill="#60A5FA" />
-              <line x1="270" y1="12" x2="270" y2="65" stroke="#3B82F6" strokeDasharray="2 2" strokeWidth="1" />
+              <circle cx="270" cy="12" r="3.5" fill="#7DAA91" />
+              <line x1="270" y1="12" x2="270" y2="65" stroke="#7DAA91" strokeDasharray="2 2" strokeWidth="1" />
             </svg>
-            <div className="absolute right-3 top-1 px-1.5 py-0.5 rounded bg-surface border border-accent/40 font-mono text-[9px] text-accent">
-              Peak: 98.4%
+            <div className="absolute right-3 top-1 px-1.5 py-0.5 rounded bg-surface border border-soft-border font-mono text-[9px] text-pine font-medium shadow-xs">
+              Observed Peak
             </div>
           </div>
         </div>
@@ -116,13 +114,13 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
 
     case 'statistical-analytics':
       return (
-        <div className="mt-6 pt-5 border-t border-border-subtle/80 bg-surface-elevated/40 rounded-xl p-4 border border-border-subtle/50">
+        <div className="mt-6 pt-5 border-t border-border-subtle bg-eucalyptus/30 rounded-xl p-4 border border-border-subtle">
           <div className="flex items-center justify-between text-[11px] font-mono text-text-tertiary mb-2">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Hypothesis Test &amp; Confidence Interval
+              <span className="w-1.5 h-1.5 rounded-full bg-soft-green" />
+              Gaussian Distribution &amp; Confidence Interval
             </span>
-            <span className="text-accent text-[10px]">p &lt; 0.05</span>
+            <span className="text-pine font-medium text-[10px]">Two-Tailed (95% CI)</span>
           </div>
           <div className="h-20 w-full relative flex items-center justify-center">
             <svg
@@ -134,25 +132,25 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
               {/* Shaded 95% Confidence Interval */}
               <path
                 d="M60 62 C80 60, 100 45, 120 25 C130 15, 140 10, 140 10 C140 10, 150 15, 160 25 C180 45, 200 60, 220 62 Z"
-                fill="#3B82F6"
-                fillOpacity="0.15"
+                fill="#7DAA91"
+                fillOpacity="0.25"
               />
               {/* Normal Distribution Curve */}
               <path
                 d="M10 63 C40 63, 70 61, 95 48 C115 37, 130 10, 140 10 C150 10, 165 37, 185 48 C210 61, 240 63, 270 63"
-                stroke="#60A5FA"
+                stroke="#25483C"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
               {/* Mean Line */}
-              <line x1="140" y1="10" x2="140" y2="65" stroke="#3B82F6" strokeDasharray="2 2" strokeWidth="1" />
+              <line x1="140" y1="10" x2="140" y2="65" stroke="#25483C" strokeDasharray="2 2" strokeWidth="1" />
               {/* Baseline */}
-              <line x1="10" y1="64" x2="270" y2="64" stroke="currentColor" className="text-border-subtle" strokeWidth="1" />
+              <line x1="10" y1="64" x2="270" y2="64" stroke="#D6DFD7" strokeWidth="1" />
             </svg>
             <div className="absolute font-mono text-[9px] text-text-tertiary bottom-0.5 flex justify-between w-full px-8">
               <span>-2σ</span>
               <span>-1σ</span>
-              <span className="text-accent font-semibold">μ</span>
+              <span className="text-pine font-semibold">μ</span>
               <span>+1σ</span>
               <span>+2σ</span>
             </div>
@@ -169,15 +167,15 @@ function PillarArtifact({ pillarId }: { pillarId: string }) {
 function TwoToneHeading({ title }: { title: string }) {
   const parts = title.split(' ');
   if (parts.length <= 1) {
-    return <span className="text-text-primary">{title}</span>;
+    return <span className="text-pine">{title}</span>;
   }
   const main = parts.slice(0, -1).join(' ');
   const accent = parts[parts.length - 1];
 
   return (
     <>
-      <span className="text-text-primary">{main} </span>
-      <span className="text-accent">{accent}</span>
+      <span className="text-pine">{main} </span>
+      <span className="text-pine/70">{accent}</span>
     </>
   );
 }
@@ -204,12 +202,12 @@ export function Expertise() {
           {EXPERTISE_PILLARS.map((pillar: ExpertisePillar) => (
             <article
               key={pillar.id}
-              className="group flex flex-col justify-between p-6 sm:p-8 rounded-2xl md:rounded-[24px] border border-border-subtle bg-surface hover:border-accent/40 hover:bg-surface-elevated/70 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 overflow-hidden"
+              className="group flex flex-col justify-between p-6 sm:p-8 rounded-2xl md:rounded-[24px] border border-border-subtle bg-surface hover:border-soft-green transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 overflow-hidden"
             >
               <div>
                 {/* Meta Row: Pillar Index & Focus Area */}
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="font-mono text-xs font-semibold text-accent px-2.5 py-1 rounded-md bg-accent/10 border border-accent/20">
+                  <span className="font-mono text-xs font-semibold text-pine px-2.5 py-1 rounded-md bg-eucalyptus border border-border-subtle">
                     {pillar.pillarNumber}
                   </span>
                   <span className="font-mono text-[11px] text-text-tertiary uppercase tracking-wider text-right">
@@ -234,7 +232,7 @@ export function Expertise() {
                 >
                   {pillar.capabilities.map((cap) => (
                     <li key={cap}>
-                      <span className="inline-block px-2.5 py-1 text-[11px] font-mono rounded bg-surface-elevated text-text-secondary border border-border-subtle">
+                      <span className="inline-block px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/50 text-text-secondary border border-border-subtle">
                         {cap}
                       </span>
                     </li>

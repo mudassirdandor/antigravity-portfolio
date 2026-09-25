@@ -8,10 +8,10 @@ export function Experience() {
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-start max-w-2xl mb-12 sm:mb-16">
-          <span className="font-mono text-xs text-accent tracking-wider uppercase mb-3">
+          <span className="font-mono text-xs text-pine tracking-wider uppercase mb-3">
             // Experience
           </span>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-text-primary tracking-tight leading-snug mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-pine tracking-tight leading-snug mb-4">
             Experience shaped by data, systems, and practical problem solving.
           </h2>
           <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
@@ -20,19 +20,19 @@ export function Experience() {
         </div>
 
         {/* Experience Timeline */}
-        <div className="relative border-l border-border-subtle/80 ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-10 sm:space-y-12">
+        <div className="relative border-l border-border-subtle ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-10 sm:space-y-12">
           {EXPERIENCES.map((exp) => (
             <article key={exp.id} className="relative group">
               {/* Timeline Indicator Dot */}
               <div
-                className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-surface border-2 border-accent group-hover:bg-accent transition-colors"
+                className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-surface border-2 border-pine group-hover:bg-pine transition-colors"
                 aria-hidden="true"
               />
 
-              <div className="p-6 sm:p-7 rounded-xl border border-border-subtle bg-surface hover:border-border-base transition-colors">
+              <div className="p-6 sm:p-7 rounded-xl border border-border-subtle bg-surface shadow-xs hover:border-soft-green transition-all">
                 {/* Meta Row: Period & Location */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <span className="font-mono text-xs font-semibold text-accent px-2 py-0.5 rounded bg-accent/10 border border-accent/20">
+                  <span className="font-mono text-xs font-semibold text-pine px-2 py-0.5 rounded bg-eucalyptus border border-border-subtle">
                     {exp.period}
                   </span>
                   <span className="font-mono text-[11px] text-text-tertiary">
@@ -41,7 +41,7 @@ export function Experience() {
                 </div>
 
                 {/* Role & Organization */}
-                <h3 className="font-display font-bold text-lg sm:text-xl text-text-primary tracking-tight mt-3 mb-1 group-hover:text-accent transition-colors">
+                <h3 className="font-display font-bold text-lg sm:text-xl text-pine tracking-tight mt-3 mb-1 group-hover:text-pine/80 transition-colors">
                   {exp.role}
                 </h3>
                 <div className="text-xs sm:text-sm font-medium text-text-secondary mb-4">
@@ -58,7 +58,7 @@ export function Experience() {
                   {exp.highlights.map((highlight) => (
                     <span
                       key={highlight}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-surface-elevated text-text-secondary border border-border-subtle"
+                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
                     >
                       {highlight}
                     </span>

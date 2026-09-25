@@ -11,10 +11,10 @@ export function Education() {
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-start max-w-2xl mb-12 sm:mb-16">
-          <span className="font-mono text-xs text-accent tracking-wider uppercase mb-3">
+          <span className="font-mono text-xs text-pine tracking-wider uppercase mb-3">
             // Education
           </span>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-text-primary tracking-tight leading-snug mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-pine tracking-tight leading-snug mb-4">
             A quantitative academic foundation.
           </h2>
           <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
@@ -26,17 +26,17 @@ export function Education() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* Prominent MSc Card */}
           {msc && (
-            <article className="lg:col-span-7 xl:col-span-8 relative p-6 sm:p-8 rounded-xl border border-accent/40 bg-surface hover:border-accent transition-colors flex flex-col justify-between">
+            <article className="lg:col-span-7 xl:col-span-8 relative p-6 sm:p-8 rounded-xl border border-border-subtle bg-surface hover:border-soft-green transition-all shadow-xs flex flex-col justify-between">
               {/* Subtle top accent line */}
               <div
-                className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-blue-400 rounded-t-xl"
+                className="absolute top-0 left-0 right-0 h-1 bg-pine rounded-t-xl"
                 aria-hidden="true"
               />
 
               <div>
                 {/* Meta Badge Row */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                  <span className="font-mono text-xs font-semibold text-accent px-2.5 py-0.5 rounded bg-accent/10 border border-accent/20">
+                  <span className="font-mono text-xs font-semibold text-pine px-2.5 py-0.5 rounded bg-eucalyptus border border-border-subtle">
                     Primary Academic Credential
                   </span>
                   <span className="font-mono text-xs text-text-tertiary">
@@ -45,7 +45,7 @@ export function Education() {
                 </div>
 
                 {/* Degree Title & Institution */}
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-text-primary tracking-tight mb-1">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl text-pine tracking-tight mb-1">
                   {msc.degree}
                 </h3>
                 {msc.institution && (
@@ -54,7 +54,7 @@ export function Education() {
                   </p>
                 )}
                 {msc.grade && (
-                  <p className="font-mono text-xs text-accent mb-4">
+                  <p className="font-mono text-xs text-pine font-medium mb-4">
                     {msc.grade}
                   </p>
                 )}
@@ -74,7 +74,7 @@ export function Education() {
                   {msc.highlights.map((h) => (
                     <span
                       key={h}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-surface-elevated text-text-secondary border border-border-subtle"
+                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
                     >
                       {h}
                     </span>
@@ -86,11 +86,11 @@ export function Education() {
 
           {/* BSc Card */}
           {bsc && (
-            <article className="lg:col-span-5 xl:col-span-4 p-6 sm:p-8 rounded-xl border border-border-subtle bg-surface hover:border-border-base transition-colors flex flex-col justify-between">
+            <article className="lg:col-span-5 xl:col-span-4 p-6 sm:p-8 rounded-xl border border-border-subtle bg-surface hover:border-soft-green transition-all shadow-xs flex flex-col justify-between">
               <div>
                 {/* Meta Row */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="font-mono text-xs font-semibold text-text-tertiary px-2 py-0.5 rounded bg-surface-elevated border border-border-subtle">
+                  <span className="font-mono text-xs font-semibold text-text-tertiary px-2 py-0.5 rounded bg-eucalyptus/50 border border-border-subtle">
                     Undergraduate
                   </span>
                   <span className="font-mono text-xs text-text-tertiary">
@@ -99,7 +99,7 @@ export function Education() {
                 </div>
 
                 {/* Degree Title */}
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-text-primary tracking-tight mb-3">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-pine tracking-tight mb-3">
                   {bsc.degree}
                 </h3>
 
@@ -118,7 +118,7 @@ export function Education() {
                   {bsc.highlights.map((h) => (
                     <span
                       key={h}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-surface-elevated text-text-secondary border border-border-subtle"
+                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
                     >
                       {h}
                     </span>

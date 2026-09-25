@@ -39,8 +39,8 @@ export function About() {
             </div>
 
             {/* Supporting Statement / Callout */}
-            <div className="border-l-2 border-accent pl-4 sm:pl-5 py-2 my-2 bg-surface/40 rounded-r-md">
-              <p className="text-sm sm:text-base italic text-text-primary font-medium leading-relaxed">
+            <div className="border-l-2 border-soft-green pl-4 sm:pl-5 py-2.5 my-2 bg-eucalyptus/30 rounded-r-md">
+              <p className="text-sm sm:text-base italic text-pine font-medium leading-relaxed">
                 "Statistics gives me the analytical foundation. Technology gives me the ability to build practical solutions around it."
               </p>
             </div>

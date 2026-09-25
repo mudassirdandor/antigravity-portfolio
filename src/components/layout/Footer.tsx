@@ -6,17 +6,17 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-surface border-t border-border-subtle py-12 md:py-16 mt-auto">
+    <footer className="w-full bg-eucalyptus/40 border-t border-border-subtle py-12 md:py-16 mt-auto">
       <Container>
         <div className="flex flex-col gap-10">
           {/* Main Footer Content */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-16">
             {/* Identity & Career Positioning */}
             <div className="flex flex-col max-w-sm">
-              <span className="font-display font-bold text-xl text-text-primary tracking-tight">
+              <span className="font-display font-bold text-xl text-pine tracking-tight">
                 {BRAND_INFO.name}
               </span>
-              <p className="font-mono text-xs text-accent uppercase tracking-wider mt-1">
+              <p className="font-mono text-xs text-pine font-semibold uppercase tracking-wider mt-1">
                 {BRAND_INFO.role} · {BRAND_INFO.specialization}
               </p>
               <p className="text-sm text-text-secondary leading-relaxed mt-3">
@@ -35,7 +35,7 @@ export function Footer() {
                     {...(link.href.startsWith('http')
                       ? { target: '_blank', rel: 'noopener noreferrer' }
                       : {})}
-                    className="inline-flex items-center text-xs font-mono text-text-secondary hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-0.5"
+                    className="inline-flex items-center text-xs font-mono text-text-tertiary hover:text-pine transition-colors focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-0.5"
                     aria-label={link.ariaLabel}
                   >
                     <span>{link.label}</span>

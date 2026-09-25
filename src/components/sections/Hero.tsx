@@ -5,26 +5,24 @@ import { SectionFrame } from '../layout/SectionFrame';
 export function Hero() {
   return (
     <SectionFrame id="home" className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-24 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32">
-      {/* Subtle analytical radial glow motif (pure CSS, lightweight) */}
+      {/* Subtle analytical ambient glow */}
       <div
-        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-[340px] sm:max-w-[500px] md:max-w-[700px] h-[300px] md:h-[400px] bg-accent/8 blur-[120px] rounded-full"
+        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-[340px] sm:max-w-[500px] md:max-w-[700px] h-[300px] md:h-[400px] bg-eucalyptus/60 blur-[120px] rounded-full"
         aria-hidden="true"
       />
 
       <Container className="relative">
         <div className="flex flex-col items-start max-w-3xl lg:max-w-4xl">
           {/* Eyebrow / Professional Category */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-subtle bg-surface text-xs font-mono text-text-secondary mb-6 sm:mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true" />
-            <span>DATA ANALYST · BUSINESS INTELLIGENCE &amp; DATA ANALYTICS</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-subtle bg-surface text-xs font-mono text-text-tertiary mb-6 sm:mb-8 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-soft-green" aria-hidden="true" />
+            <span className="text-text-secondary font-medium">DATA ANALYST · BUSINESS INTELLIGENCE &amp; DATA ANALYTICS</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-text-primary leading-[1.15] sm:leading-[1.1] mb-6">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-pine leading-[1.15] sm:leading-[1.1] mb-6">
             Turning Data Into Clear,{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-accent">
-              Actionable Insight.
-            </span>
+            <span className="text-pine">Actionable Insight.</span>
           </h1>
 
           {/* Supporting Copy */}

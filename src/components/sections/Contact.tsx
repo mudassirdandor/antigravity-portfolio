@@ -22,14 +22,14 @@ function GithubIcon({ className = 'w-4 h-4' }: { className?: string }) {
 
 export function Contact() {
   return (
-    <SectionFrame id="contact" className="border-t border-border-subtle py-16 sm:py-20 md:py-24 lg:py-28">
+    <SectionFrame id="contact" className="border-t border-border-subtle bg-eucalyptus/30 py-16 sm:py-20 md:py-24 lg:py-28">
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-start max-w-2xl mb-12 sm:mb-16">
-          <span className="font-mono text-xs text-accent tracking-wider uppercase mb-3">
+          <span className="font-mono text-xs text-pine tracking-wider uppercase mb-3">
             // Contact
           </span>
-          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-text-primary tracking-tight leading-snug mb-4">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-pine tracking-tight leading-snug mb-4">
             Let's Work With Data
           </h2>
           <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
@@ -42,23 +42,23 @@ export function Contact() {
           {/* Email */}
           <a
             href="mailto:mudassirdandor@gmail.com"
-            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-accent transition-colors flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
+            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-pine hover:shadow-md transition-all flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
             aria-label="Send email to mudassirdandor@gmail.com"
           >
             <div>
-              <div className="w-10 h-10 rounded-lg bg-surface-elevated border border-border-subtle flex items-center justify-center text-accent mb-4 group-hover:bg-accent/10 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-eucalyptus border border-border-subtle flex items-center justify-center text-pine mb-4 group-hover:bg-pine group-hover:text-white transition-colors">
                 <Mail className="w-5 h-5" aria-hidden="true" />
               </div>
               <span className="font-mono text-[11px] text-text-tertiary uppercase tracking-wider block mb-1">
                 Direct Email
               </span>
-              <h3 className="font-display font-bold text-base text-text-primary tracking-tight group-hover:text-accent transition-colors mb-2 break-all">
+              <h3 className="font-display font-bold text-base text-pine tracking-tight group-hover:text-pine/80 transition-colors mb-2 break-all">
                 mudassirdandor@gmail.com
               </h3>
             </div>
-            <span className="text-xs text-text-secondary flex items-center gap-1.5 pt-3 border-t border-border-subtle">
+            <span className="text-xs text-text-secondary group-hover:text-pine flex items-center gap-1.5 pt-3 border-t border-border-subtle transition-colors">
               <span>Send Message</span>
-              <ExternalLink className="w-3.5 h-3.5 text-text-tertiary" aria-hidden="true" />
+              <ExternalLink className="w-3.5 h-3.5 text-text-tertiary group-hover:text-pine transition-colors" aria-hidden="true" />
             </span>
           </a>
 
@@ -67,23 +67,23 @@ export function Contact() {
             href="https://www.linkedin.com/in/mudassirdandor"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-accent transition-colors flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
+            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-pine hover:shadow-md transition-all flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
             aria-label="Visit LinkedIn profile of Mudassir Javed"
           >
             <div>
-              <div className="w-10 h-10 rounded-lg bg-surface-elevated border border-border-subtle flex items-center justify-center text-accent mb-4 group-hover:bg-accent/10 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-eucalyptus border border-border-subtle flex items-center justify-center text-pine mb-4 group-hover:bg-pine group-hover:text-white transition-colors">
                 <ExternalLink className="w-5 h-5" aria-hidden="true" />
               </div>
               <span className="font-mono text-[11px] text-text-tertiary uppercase tracking-wider block mb-1">
                 Professional Network
               </span>
-              <h3 className="font-display font-bold text-base text-text-primary tracking-tight group-hover:text-accent transition-colors mb-2">
+              <h3 className="font-display font-bold text-base text-pine tracking-tight group-hover:text-pine/80 transition-colors mb-2">
                 LinkedIn Profile
               </h3>
             </div>
-            <span className="text-xs text-text-secondary flex items-center gap-1.5 pt-3 border-t border-border-subtle">
+            <span className="text-xs text-text-secondary group-hover:text-pine flex items-center gap-1.5 pt-3 border-t border-border-subtle transition-colors">
               <span>View Profile</span>
-              <ExternalLink className="w-3.5 h-3.5 text-text-tertiary" aria-hidden="true" />
+              <ExternalLink className="w-3.5 h-3.5 text-text-tertiary group-hover:text-pine transition-colors" aria-hidden="true" />
             </span>
           </a>
 
@@ -92,44 +92,44 @@ export function Contact() {
             href="https://github.com/mudassirdandor"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-accent transition-colors flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
+            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-pine hover:shadow-md transition-all flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
             aria-label="Visit GitHub repositories of Mudassir Javed"
           >
             <div>
-              <div className="w-10 h-10 rounded-lg bg-surface-elevated border border-border-subtle flex items-center justify-center text-accent mb-4 group-hover:bg-accent/10 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-eucalyptus border border-border-subtle flex items-center justify-center text-pine mb-4 group-hover:bg-pine group-hover:text-white transition-colors">
                 <GithubIcon className="w-5 h-5" />
               </div>
               <span className="font-mono text-[11px] text-text-tertiary uppercase tracking-wider block mb-1">
                 Source Code &amp; Repositories
               </span>
-              <h3 className="font-display font-bold text-base text-text-primary tracking-tight group-hover:text-accent transition-colors mb-2">
+              <h3 className="font-display font-bold text-base text-pine tracking-tight group-hover:text-pine/80 transition-colors mb-2">
                 GitHub Portfolio
               </h3>
             </div>
-            <span className="text-xs text-text-secondary flex items-center gap-1.5 pt-3 border-t border-border-subtle">
+            <span className="text-xs text-text-secondary group-hover:text-pine flex items-center gap-1.5 pt-3 border-t border-border-subtle transition-colors">
               <span>View Repositories</span>
-              <ExternalLink className="w-3.5 h-3.5 text-text-tertiary" aria-hidden="true" />
+              <ExternalLink className="w-3.5 h-3.5 text-text-tertiary group-hover:text-pine transition-colors" aria-hidden="true" />
             </span>
           </a>
 
           {/* CV Request */}
           <a
             href="mailto:mudassirdandor@gmail.com?subject=CV%20Request%20-%20Mudassir%20Javed"
-            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-accent transition-colors flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
+            className="p-6 rounded-xl border border-border-subtle bg-surface hover:border-pine hover:shadow-md transition-all flex flex-col justify-between group focus-visible:outline-2 focus-visible:outline-focus"
             aria-label="Request CV from Mudassir Javed via email"
           >
             <div>
-              <div className="w-10 h-10 rounded-lg bg-surface-elevated border border-border-subtle flex items-center justify-center text-accent mb-4 group-hover:bg-accent/10 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-eucalyptus border border-border-subtle flex items-center justify-center text-pine mb-4 group-hover:bg-pine group-hover:text-white transition-colors">
                 <FileText className="w-5 h-5" aria-hidden="true" />
               </div>
               <span className="font-mono text-[11px] text-text-tertiary uppercase tracking-wider block mb-1">
                 Curriculum Vitae
               </span>
-              <h3 className="font-display font-bold text-base text-text-primary tracking-tight group-hover:text-accent transition-colors mb-2">
+              <h3 className="font-display font-bold text-base text-pine tracking-tight group-hover:text-pine/80 transition-colors mb-2">
                 CV / Resume
               </h3>
             </div>
-            <span className="text-xs text-accent flex items-center gap-1.5 pt-3 border-t border-border-subtle font-medium">
+            <span className="text-xs text-pine flex items-center gap-1.5 pt-3 border-t border-border-subtle font-medium">
               <span>Available on Request</span>
               <Mail className="w-3.5 h-3.5" aria-hidden="true" />
             </span>
