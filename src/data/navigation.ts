@@ -3,6 +3,12 @@ export interface NavItem {
   href: string;
 }
 
+export interface SocialLink {
+  label: string;
+  href: string;
+  ariaLabel: string;
+}
+
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -20,15 +26,36 @@ export const NAV_CTA: NavItem = {
 
 export const FOOTER_NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
+  { label: 'Expertise', href: '#expertise' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Selected Work', href: '#work' },
   { label: 'Experience', href: '#experience' },
   { label: 'Education', href: '#education' },
-  { label: 'Credentials', href: '#credentials' },
+  { label: 'Certifications', href: '#credentials' },
+  { label: 'Professional Philosophy', href: '#approach' },
   { label: 'Contact', href: '#contact' },
 ];
 
+export const FOOTER_SOCIAL_LINKS: SocialLink[] = [
+  {
+    label: 'Email',
+    href: 'mailto:mudassirdandor@gmail.com',
+    ariaLabel: 'Send email to mudassirdandor@gmail.com',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/mudassirdandor',
+    ariaLabel: 'Visit LinkedIn profile of Mudassir Javed',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/mudassirdandor',
+    ariaLabel: 'Visit GitHub repositories of Mudassir Javed',
+  },
+];
+
 export const BRAND_INFO = {
-  name: 'MUDASSIR JAVED',
+  name: 'Mudassir Javed',
   role: 'Data Analyst',
   specialization: 'Business Intelligence & Data Analytics',
   statement: 'Mudassir Javed — Data Analyst | Business Intelligence & Data Analytics',

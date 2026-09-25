@@ -1,5 +1,6 @@
+import { ExternalLink } from 'lucide-react';
 import { Container } from './Container';
-import { FOOTER_NAV_ITEMS, BRAND_INFO, NAV_CTA } from '../../data/navigation';
+import { FOOTER_NAV_ITEMS, FOOTER_SOCIAL_LINKS, BRAND_INFO } from '../../data/navigation';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,50 +9,72 @@ export function Footer() {
     <footer className="w-full bg-surface border-t border-border-subtle py-12 md:py-16 mt-auto">
       <Container>
         <div className="flex flex-col gap-10">
-          {/* Top Section */}
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
+          {/* Main Footer Content */}
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-16">
             {/* Identity & Career Positioning */}
-            <div className="flex flex-col gap-2.5 max-w-md">
-              <span className="font-display font-bold text-lg text-text-primary tracking-tight">
+            <div className="flex flex-col max-w-sm">
+              <span className="font-display font-bold text-xl text-text-primary tracking-tight">
                 {BRAND_INFO.name}
               </span>
-              <p className="text-sm text-text-secondary leading-relaxed">
-                {BRAND_INFO.statement}
+              <p className="font-mono text-xs text-accent uppercase tracking-wider mt-1">
+                {BRAND_INFO.role} · {BRAND_INFO.specialization}
               </p>
-              <p className="font-mono text-xs text-text-tertiary tracking-wide">
+              <p className="text-sm text-text-secondary leading-relaxed mt-3">
+                Transforming complex data into clear, actionable insights that support better decisions.
+              </p>
+              <p className="font-mono text-xs text-text-tertiary tracking-wide mt-2">
                 {BRAND_INFO.narrative}
               </p>
+
+              {/* Verified Professional Links */}
+              <div className="flex flex-wrap items-center gap-4 mt-5">
+                {FOOTER_SOCIAL_LINKS.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    {...(link.href.startsWith('http')
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    className="inline-flex items-center text-xs font-mono text-text-secondary hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-0.5"
+                    aria-label={link.ariaLabel}
+                  >
+                    <span>{link.label}</span>
+                    {link.href.startsWith('http') && (
+                      <ExternalLink className="w-3 h-3 ml-1 text-text-tertiary" aria-hidden="true" />
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Navigation & CTA Group */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+            {/* Navigation Links Grid */}
+            <div className="flex flex-col">
+              <span className="font-mono text-xs text-text-tertiary uppercase tracking-wider block mb-3">
+                Navigation
+              </span>
               <nav
                 aria-label="Footer Navigation"
-                className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-secondary"
+                className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 sm:gap-x-10 gap-y-2.5 text-xs sm:text-sm text-text-secondary"
               >
                 {FOOTER_NAV_ITEMS.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
-                    className="hover:text-text-primary transition-colors focus-visible:outline-2 focus-visible:outline-focus rounded-sm"
+                    className="hover:text-text-primary transition-colors focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-0.5"
                   >
                     {item.label}
                   </a>
                 ))}
               </nav>
-
-              <a
-                href={NAV_CTA.href}
-                className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-accent hover:bg-accent-hover rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-focus self-start sm:self-auto"
-              >
-                {NAV_CTA.label}
-              </a>
             </div>
           </div>
 
           {/* Bottom Bar / Copyright */}
-          <div className="pt-6 border-t border-border-subtle flex items-center justify-between gap-3 text-xs text-text-tertiary">
+          <div className="pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-tertiary font-mono">
             <p>© {currentYear} Mudassir Javed. All rights reserved.</p>
+            <span className="text-text-tertiary">
+              Data Analyst · Business Intelligence &amp; Data Analytics
+            </span>
           </div>
         </div>
       </Container>
