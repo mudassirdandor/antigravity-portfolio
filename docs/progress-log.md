@@ -454,5 +454,48 @@ Build the reusable application shell, accessible sticky global header, mobile dr
 
 `COMPLETED`
 
+---
+
+## 2026-09-25 — Milestone 2 / Scope Corrections & Focus Management Hardening
+
+### Agent
+
+Lead Architect / Frontend Engineer
+
+### Objective
+
+Apply approved minimal scope compliance corrections to `src/App.tsx`, `src/components/layout/Footer.tsx`, and `src/components/navigation/Navbar.tsx` following the Milestone 2 pre-acceptance audit.
+
+### Source Documents
+
+- `docs/portfolio-brief.md`
+- `docs/content.md`
+- `docs/design-system.md`
+- `docs/development-plan.md`
+- `docs/agent-guardrails.md`
+
+### Files Modified
+
+- `src/App.tsx` — Removed premature `#home` SectionFrame and artificial dummy anchor nodes (`#about`, `#work`, `#experience`, `#education`, `#credentials`, `#contact`); preserved clean semantic `<AppShell>` main landmark awaiting Milestone 3.
+- `src/components/layout/Footer.tsx` — Removed unauthorized bottom bar tagline (`Analytical Precision · Technical Execution`); preserved approved primary statement, narrative ticker, footer navigation, CTA, and dynamic copyright.
+- `src/components/navigation/Navbar.tsx` — Hardened mobile drawer accessibility with complete focus management: `toggleButtonRef`, moving initial focus to first link upon opening, restoring focus to toggle upon closure (Escape, link activation, or toggle click), and trapping Tab/Shift+Tab focus within the open modal. Added `motion-reduce:animate-none`.
+- `docs/progress-log.md` — Logged corrections and verification evidence.
+
+### Verification Summary
+
+- **TypeScript Compilation:** `pnpm typecheck` (`tsc -b`) — PASS (zero errors)
+- **ESLint Code Quality:** `pnpm lint` (`eslint .`) — PASS (zero warnings, zero errors)
+- **Production Build:** `pnpm build` (`tsc -b && vite build`) — PASS (exit code 0; 29.32 kB CSS, 230.32 kB JS)
+- **DOM Landmark Audit:** Verified `<main id="main-content">` has 0 dummy nodes and 0 placeholder sections.
+- **Footer Copy Audit:** Verified unauthorized tagline is absent; authorized statement, narrative ticker, and dynamic copyright confirmed present.
+- **Focus Management Audit:** Verified via Chrome CDP: focus enters drawer upon open (`isFocusOnFirstLink: true`), Tab wraps from last to first element (`wrappedToFirst: true`), Shift+Tab wraps from first to last (`wrappedToLast: true`), focus is restored to toggle on Escape (`isFocusRestoredToToggle: true`), and focus is restored to toggle on navigation link click (`isFocusRestoredToToggle: true`).
+- **Responsive Overflow:** Verified via Chrome CDP at 1440px desktop, 390px mobile, and 320px compact mobile viewports (`hasHorizontalOverflow: false` across all).
+- **Visual Evidence:** Updated actual screenshots captured via Chrome CDP: `desktop_preview.png`, `mobile_preview.png`, and `mobile_menu_open.png`.
+
+### Status
+
+`COMPLETED`
+
+
 
 

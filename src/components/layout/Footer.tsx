@@ -50,9 +50,8 @@ export function Footer() {
           </div>
 
           {/* Bottom Bar / Copyright */}
-          <div className="pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-tertiary">
+          <div className="pt-6 border-t border-border-subtle flex items-center justify-between gap-3 text-xs text-text-tertiary">
             <p>© {currentYear} Mudassir Javed. All rights reserved.</p>
-            <p className="font-mono">Analytical Precision · Technical Execution</p>
           </div>
         </div>
       </Container>

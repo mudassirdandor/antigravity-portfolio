@@ -1,32 +1,83 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS, NAV_CTA, BRAND_INFO } from '../../data/navigation';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const wasOpenRef = useRef(false);
 
-  // Close mobile menu on Escape key press
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false);
-      }
-    }
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
-
-  // Lock background scrolling when mobile menu is active
+  // Focus management, scroll locking, Escape handling, and focus trap
   useEffect(() => {
     if (isOpen) {
+      wasOpenRef.current = true;
       document.body.style.overflow = 'hidden';
+
+      // Move focus into the drawer upon opening
+      const focusTimer = requestAnimationFrame(() => {
+        if (drawerRef.current) {
+          const focusables = drawerRef.current.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          );
+          if (focusables.length > 0) {
+            focusables[0].focus();
+          } else {
+            drawerRef.current.focus();
+          }
+        }
+      });
+
+      // Trap focus within drawer and handle Escape key
+      function handleKeyDown(e: KeyboardEvent) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          setIsOpen(false);
+          return;
+        }
+
+        if (e.key === 'Tab' && drawerRef.current) {
+          const focusables = Array.from(
+            drawerRef.current.querySelectorAll<HTMLElement>(
+              'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )
+          );
+
+          if (focusables.length === 0) return;
+
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === first || !drawerRef.current.contains(document.activeElement)) {
+              e.preventDefault();
+              last.focus();
+            }
+          } else {
+            if (document.activeElement === last || !drawerRef.current.contains(document.activeElement)) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+      }
+
+      window.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        cancelAnimationFrame(focusTimer);
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = '';
+      };
     } else {
+      // Restore focus to toggle button when closed
+      if (wasOpenRef.current) {
+        wasOpenRef.current = false;
+        toggleButtonRef.current?.focus();
+      }
       document.body.style.overflow = '';
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [isOpen]);
 
   return (
@@ -68,6 +119,7 @@ export function Navbar() {
 
       {/* Mobile Menu Toggle Button */}
       <button
+        ref={toggleButtonRef}
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
@@ -87,11 +139,13 @@ export function Navbar() {
         typeof document !== 'undefined' &&
         createPortal(
           <div
+            ref={drawerRef}
             id="mobile-navigation"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation Menu"
-            className="fixed inset-x-0 top-16 bottom-0 z-50 bg-background/98 backdrop-blur-2xl border-t border-border-subtle md:hidden flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in duration-200"
+            tabIndex={-1}
+            className="fixed inset-x-0 top-16 bottom-0 z-50 bg-background/98 backdrop-blur-2xl border-t border-border-subtle md:hidden flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in duration-200 motion-reduce:animate-none"
           >
             <nav aria-label="Mobile Navigation" className="flex flex-col gap-4 pt-2">
               {NAV_ITEMS.map((item) => (
