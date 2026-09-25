@@ -401,4 +401,58 @@ Lead Architect / QA & Testing Agent
 
 `COMPLETED`
 
+---
+
+## 2026-09-25 — Milestone 2 / Application Shell & Global Navigation
+
+### Agent
+
+Lead Architect / Frontend Engineer
+
+### Objective
+
+Build the reusable application shell, accessible sticky global header, mobile drawer navigation, and global footer layout on top of the Milestone 1 design foundation, strictly adhering to `portfolio-brief.md`, `design-system.md`, and `content.md`.
+
+### Source Documents
+
+- `docs/portfolio-brief.md`
+- `docs/design-system.md`
+- `docs/development-plan.md`
+- `docs/content.md`
+- `docs/agent-guardrails.md`
+
+### Files Created / Modified
+
+- `src/data/navigation.ts` (created) — Centralized data-driven navigation items, footer navigation links, and brand positioning constants.
+- `src/components/navigation/Navbar.tsx` (created) — Desktop navigation, brand identity, accessible mobile menu toggle button, keyboard Escape listener, body scroll lock, and portal-rendered mobile navigation drawer.
+- `src/components/layout/Header.tsx` (created) — Sticky header with accessible skip-to-content link, `Container` wrapper, and backdrop blur.
+- `src/components/layout/Footer.tsx` (created) — Global footer with primary statement, career narrative (`Statistics → Data → Insights → Decisions`), footer links, CTA, and dynamic copyright year.
+- `src/components/layout/AppShell.tsx` (created) — Reusable root application shell orchestrating `Header`, `<main id="main-content">`, and `Footer`.
+- `src/App.tsx` (modified) — Integrated `AppShell` with anchor-ready section frame placeholders ensuring all navigation links resolve to valid DOM targets without premature content implementation.
+- `docs/progress-log.md` (modified) — Appended Milestone 2 record.
+
+### Architectural Decisions
+
+- **Data-Driven Navigation:** Separated navigation arrays into `src/data/navigation.ts` to keep UI components decoupled from content.
+- **Accessible Mobile Drawer via Portal:** Rendered the mobile navigation drawer directly into `document.body` via `createPortal` to avoid CSS stacking context and `backdrop-filter` clipping constraints on the sticky header.
+- **Valid Anchor Destinations:** Established empty structural frame anchor targets (`#home`, `#about`, `#work`, `#experience`, `#education`, `#credentials`, `#contact`) in `<main>` so all navigation links resolve to valid DOM elements without broken fragment links and without implementing section content prematurely.
+- **Accessible Navigation Standards:** Implemented a visible keyboard "Skip to main content" link, `aria-expanded` and `aria-controls` on the mobile menu button, `aria-modal` on the mobile dialog, and `aria-label` on navigation elements.
+
+### Verification Summary
+
+- **TypeScript Compilation:** `pnpm typecheck` (`tsc -b`) — PASS (zero errors)
+- **ESLint Code Quality:** `pnpm lint` (`eslint .`) — PASS (zero warnings, zero errors)
+- **Production Build:** `pnpm build` (`tsc -b && vite build`) — PASS (exit code 0; 29.33 kB CSS, 230.29 kB JS, self-hosted fonts)
+- **Responsive Diagnostics:** Verified via Chrome DevTools Protocol at 1440px desktop, 390px mobile, and 320px compact mobile viewports. `hasHorizontalOverflow: false` across all tested viewports.
+- **Visual Evidence:** Actual browser screenshots captured via Chrome CDP for desktop (`desktop_preview.png`), mobile closed (`mobile_preview.png`), and mobile drawer open (`mobile_menu_open.png`).
+
+### Remaining Limitations
+
+- Portfolio content sections (Hero, About, Projects, etc.) remain intentionally unimplemented per strict milestone boundaries. Milestone 3 will establish the Hero section.
+
+### Status
+
+`COMPLETED`
+
+
 

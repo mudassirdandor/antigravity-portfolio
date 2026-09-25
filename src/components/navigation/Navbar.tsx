@@ -1,0 +1,128 @@
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { Menu, X } from 'lucide-react';
+import { NAV_ITEMS, NAV_CTA, BRAND_INFO } from '../../data/navigation';
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close mobile menu on Escape key press
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
+  // Lock background scrolling when mobile menu is active
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  return (
+    <div className="flex items-center justify-between w-full h-16 md:h-20">
+      {/* Brand Identity */}
+      <a
+        href="#home"
+        className="group flex items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-1"
+      >
+        <span className="font-display font-bold text-base sm:text-lg tracking-tight text-text-primary group-hover:text-accent transition-colors">
+          {BRAND_INFO.name}
+        </span>
+        <span className="hidden sm:inline-block font-mono text-[11px] text-text-tertiary border border-border-subtle bg-surface px-1.5 py-0.5 rounded">
+          {BRAND_INFO.role}
+        </span>
+      </a>
+
+      {/* Desktop Navigation */}
+      <nav
+        aria-label="Primary Navigation"
+        className="hidden md:flex items-center gap-6 lg:gap-8"
+      >
+        {NAV_ITEMS.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-1"
+          >
+            {item.label}
+          </a>
+        ))}
+        <a
+          href={NAV_CTA.href}
+          className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-accent hover:bg-accent-hover rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-focus"
+        >
+          {NAV_CTA.label}
+        </a>
+      </nav>
+
+      {/* Mobile Menu Toggle Button */}
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        aria-controls="mobile-navigation"
+        aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors focus-visible:outline-2 focus-visible:outline-focus"
+      >
+        {isOpen ? (
+          <X className="w-5 h-5" aria-hidden="true" />
+        ) : (
+          <Menu className="w-5 h-5" aria-hidden="true" />
+        )}
+      </button>
+
+      {/* Mobile Navigation Drawer portaled to document.body to avoid header stacking context constraints */}
+      {isOpen &&
+        typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            id="mobile-navigation"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation Menu"
+            className="fixed inset-x-0 top-16 bottom-0 z-50 bg-background/98 backdrop-blur-2xl border-t border-border-subtle md:hidden flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in duration-200"
+          >
+            <nav aria-label="Mobile Navigation" className="flex flex-col gap-4 pt-2">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-medium text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-subtle focus-visible:outline-2 focus-visible:outline-focus rounded-sm"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="pt-6 pb-4">
+              <a
+                href={NAV_CTA.href}
+                onClick={() => setIsOpen(false)}
+                className="w-full flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-accent hover:bg-accent-hover rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-focus"
+              >
+                {NAV_CTA.label}
+              </a>
+              <p className="mt-4 text-center font-mono text-xs text-text-tertiary">
+                {BRAND_INFO.statement}
+              </p>
+            </div>
+          </div>,
+          document.body
+        )}
+    </div>
+  );
+}
+
+export default Navbar;
