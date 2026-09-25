@@ -98,7 +98,7 @@ export function Navbar() {
       {/* Desktop Navigation */}
       <nav
         aria-label="Primary Navigation"
-        className="hidden md:flex items-center gap-6 lg:gap-8"
+        className="hidden lg:flex items-center gap-6 lg:gap-8"
       >
         {NAV_ITEMS.map((item) => (
           <a
@@ -125,7 +125,7 @@ export function Navbar() {
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
         aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors focus-visible:outline-2 focus-visible:outline-focus"
+        className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-surface-elevated transition-colors focus-visible:outline-2 focus-visible:outline-focus"
       >
         {isOpen ? (
           <X className="w-5 h-5" aria-hidden="true" />
@@ -145,7 +145,7 @@ export function Navbar() {
             aria-modal="true"
             aria-label="Mobile Navigation Menu"
             tabIndex={-1}
-            className="fixed inset-x-0 top-16 bottom-0 z-50 bg-background/98 backdrop-blur-2xl border-t border-border-subtle md:hidden flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in duration-200 motion-reduce:animate-none"
+            className="fixed inset-x-0 top-16 bottom-0 z-50 bg-background/98 backdrop-blur-2xl border-t border-border-subtle lg:hidden flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in duration-200 motion-reduce:animate-none"
           >
             <nav aria-label="Mobile Navigation" className="flex flex-col gap-4 pt-2">
               {NAV_ITEMS.map((item) => (
