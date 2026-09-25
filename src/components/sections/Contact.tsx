@@ -52,7 +52,7 @@ export function Contact() {
               <span className="font-mono text-[11px] text-text-tertiary uppercase tracking-wider block mb-1">
                 Direct Email
               </span>
-              <h3 className="font-display font-bold text-base text-text-primary tracking-tight group-hover:text-accent transition-colors mb-2">
+              <h3 className="font-display font-bold text-base text-text-primary tracking-tight group-hover:text-accent transition-colors mb-2 break-all">
                 mudassirdandor@gmail.com
               </h3>
             </div>

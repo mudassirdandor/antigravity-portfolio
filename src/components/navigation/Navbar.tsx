@@ -85,12 +85,12 @@ export function Navbar() {
       {/* Brand Identity */}
       <a
         href="#home"
-        className="group flex items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-1"
+        className="group flex items-center gap-2 sm:gap-2.5 shrink-0 focus-visible:outline-2 focus-visible:outline-focus rounded-sm py-1"
       >
-        <span className="font-display font-bold text-base sm:text-lg tracking-tight text-text-primary group-hover:text-accent transition-colors">
+        <span className="font-display font-bold text-base sm:text-lg tracking-tight text-text-primary group-hover:text-accent transition-colors whitespace-nowrap">
           {BRAND_INFO.name}
         </span>
-        <span className="hidden sm:inline-block font-mono text-[11px] text-text-tertiary border border-border-subtle bg-surface px-1.5 py-0.5 rounded">
+        <span className="hidden sm:inline-block font-mono text-[11px] text-text-tertiary border border-border-subtle bg-surface px-1.5 py-0.5 rounded whitespace-nowrap">
           {BRAND_INFO.role}
         </span>
       </a>
@@ -98,7 +98,7 @@ export function Navbar() {
       {/* Desktop Navigation */}
       <nav
         aria-label="Primary Navigation"
-        className="hidden lg:flex items-center gap-6 lg:gap-8"
+        className="hidden lg:flex items-center gap-4 xl:gap-8"
       >
         {NAV_ITEMS.map((item) => (
           <a

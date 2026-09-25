@@ -7,7 +7,7 @@ export function Hero() {
     <SectionFrame id="home" className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-24 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32">
       {/* Subtle analytical radial glow motif (pure CSS, lightweight) */}
       <div
-        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[340px] sm:w-[500px] md:w-[700px] h-[300px] md:h-[400px] bg-accent/8 blur-[120px] rounded-full"
+        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-[340px] sm:max-w-[500px] md:max-w-[700px] h-[300px] md:h-[400px] bg-accent/8 blur-[120px] rounded-full"
         aria-hidden="true"
       />
 
