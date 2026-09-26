@@ -6,11 +6,61 @@ import { HeroIllustration } from './hero/HeroIllustration';
 export function Hero() {
   return (
     <SectionFrame id="home" className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-24 lg:pt-20 lg:pb-28">
-      {/* Subtle analytical ambient glow */}
-      <div
-        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-[340px] sm:max-w-[500px] md:max-w-[700px] h-[300px] md:h-[400px] bg-eucalyptus/60 blur-[120px] rounded-full"
-        aria-hidden="true"
-      />
+      {/* ============================================================== */}
+      {/* LIGHTWEIGHT HERO BACKGROUND (Milestone 20.3)                   */}
+      {/* Zero pointer tracking, pure CSS atmospheric glow & static grid */}
+      {/* ============================================================== */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden select-none" aria-hidden="true">
+        {/* Layer A: Light Atmospheric Glow (High-efficiency CSS radial gradients) */}
+        <div
+          className="absolute inset-0 [background:radial-gradient(circle_at_50%_72%,rgba(220,231,223,0.85)_0%,rgba(220,231,223,0.3)_40%,transparent_70%),radial-gradient(ellipse_at_50%_80%,rgba(125,170,145,0.2)_0%,transparent_55%)] lg:[background:radial-gradient(circle_at_74%_46%,rgba(220,231,223,0.85)_0%,rgba(220,231,223,0.25)_42%,transparent_70%),radial-gradient(ellipse_at_70%_72%,rgba(125,170,145,0.18)_0%,rgba(125,170,145,0.04)_36%,transparent_58%)]"
+        />
+
+        {/* Layer B & C: Minimal Analytical Grid & Subtle Static Contours */}
+        <svg
+          className="absolute inset-0 w-full h-full [mask-image:radial-gradient(circle_at_50%_72%,black_0%,black_30%,transparent_68%)] lg:[mask-image:radial-gradient(circle_at_74%_46%,black_0%,black_35%,transparent_72%)]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            {/* 2:1 Isometric Grid Pattern */}
+            <pattern
+              id="hero-bg-isogrid"
+              width="48"
+              height="27.7128"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 0 13.8564 L 24 0 L 48 13.8564 L 24 27.7128 Z"
+                fill="none"
+                stroke="#25483C"
+                strokeWidth="0.75"
+                strokeOpacity="0.045"
+              />
+            </pattern>
+          </defs>
+
+          {/* Masked Static Isometric Grid */}
+          <rect
+            width="100%"
+            height="100%"
+            fill="url(#hero-bg-isogrid)"
+          />
+
+          {/* Layer C: Static, extremely subtle contour arcs behind illustration */}
+          <g fill="none" stroke="#25483C" strokeWidth="1" strokeOpacity="0.05">
+            {/* Mobile / Tablet Centered Contours */}
+            <g className="lg:hidden">
+              <ellipse cx="50%" cy="72%" rx="280" ry="160" strokeDasharray="6 8" />
+              <ellipse cx="50%" cy="72%" rx="400" ry="220" />
+            </g>
+            {/* Desktop Centered Contours */}
+            <g className="hidden lg:block">
+              <ellipse cx="74%" cy="46%" rx="340" ry="190" strokeDasharray="6 8" />
+              <ellipse cx="74%" cy="46%" rx="480" ry="265" />
+            </g>
+          </g>
+        </svg>
+      </div>
 
       <Container className="relative">
         {/* Main Two-Column Hero Grid on Desktop / Stack on Mobile */}
