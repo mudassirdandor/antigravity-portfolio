@@ -1,6 +1,7 @@
 import { Container } from '../layout/Container';
 import { SectionFrame } from '../layout/SectionFrame';
 import { EXPERIENCES } from '../../data/experience';
+import { Chip } from '../ui/Chip';
 
 export function Experience() {
   return (
@@ -54,14 +55,11 @@ export function Experience() {
                 </p>
 
                 {/* Highlights / Skills */}
-                <div className="pt-3 border-t border-border-subtle flex flex-wrap gap-1.5">
+                <div className="pt-3 border-t border-border-subtle flex flex-wrap gap-2">
                   {exp.highlights.map((highlight) => (
-                    <span
-                      key={highlight}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
-                    >
+                    <Chip key={highlight} variant="eucalyptus">
                       {highlight}
-                    </span>
+                    </Chip>
                   ))}
                 </div>
               </div>

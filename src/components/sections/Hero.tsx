@@ -2,6 +2,7 @@ import { ArrowDown, MessageSquare } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { SectionFrame } from '../layout/SectionFrame';
 import { HeroIllustration } from './hero/HeroIllustration';
+import { Chip } from '../ui/Chip';
 
 export function Hero() {
   return (
@@ -110,24 +111,16 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Supporting Metadata / Academic & Technical Focus (Anchoring Bottom Row) */}
-        <div className="w-full mt-10 sm:mt-12 lg:mt-14 pt-6 sm:pt-8 border-t border-border-subtle flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-xs text-text-tertiary">
-          <span className="font-mono text-text-secondary uppercase tracking-wider text-[11px] shrink-0">
+        {/* Key Competencies Strip (Milestone 21 - Unified Chip Design System) */}
+        <div className="w-full mt-10 sm:mt-12 lg:mt-14 pt-6 sm:pt-7 border-t border-border-subtle flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-5 lg:gap-6 text-xs">
+          <span className="font-mono text-text-tertiary uppercase tracking-wider text-[11px] sm:text-xs font-semibold shrink-0">
             Key Competencies
           </span>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="px-2.5 py-1 rounded bg-surface border border-border-subtle font-mono text-text-secondary">
-              MSc Statistics
-            </span>
-            <span className="px-2.5 py-1 rounded bg-surface border border-border-subtle font-mono text-text-secondary">
-              Business Intelligence
-            </span>
-            <span className="px-2.5 py-1 rounded bg-surface border border-border-subtle font-mono text-text-secondary">
-              Data Analytics
-            </span>
-            <span className="px-2.5 py-1 rounded bg-surface border border-border-subtle font-mono text-text-secondary">
-              Python · SQL · Power BI
-            </span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <Chip variant="surface">MSc Statistics</Chip>
+            <Chip variant="surface">Business Intelligence</Chip>
+            <Chip variant="surface">Data Analytics</Chip>
+            <Chip variant="surface">Python · SQL · Power BI</Chip>
           </div>
         </div>
       </Container>

@@ -2,6 +2,7 @@ import { ExternalLink } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { SectionFrame } from '../layout/SectionFrame';
 import { PROJECTS } from '../../data/projects';
+import { Chip } from '../ui/Chip';
 
 function GithubIcon({ className = 'w-3.5 h-3.5' }: { className?: string }) {
   return (
@@ -79,14 +80,11 @@ export function Projects() {
                       </p>
 
                       {/* Capabilities / Tech Stack Tags */}
-                      <div className="flex flex-wrap gap-1.5 mb-8">
+                      <div className="flex flex-wrap gap-2 mb-8">
                         {project.capabilities.map((cap) => (
-                          <span
-                            key={cap}
-                            className="px-2.5 py-1 text-xs font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
-                          >
+                          <Chip key={cap} variant="eucalyptus">
                             {cap}
-                          </span>
+                          </Chip>
                         ))}
                       </div>
                     </div>

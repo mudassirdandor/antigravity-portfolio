@@ -1,6 +1,7 @@
 import { Container } from '../layout/Container';
 import { SectionFrame } from '../layout/SectionFrame';
 import { EDUCATION_ITEMS } from '../../data/education';
+import { Chip } from '../ui/Chip';
 
 export function Education() {
   const msc = EDUCATION_ITEMS.find((item) => item.id === 'msc-statistics');
@@ -70,14 +71,11 @@ export function Education() {
                 <span className="font-mono text-[10px] text-text-tertiary uppercase tracking-wider block mb-2.5">
                   Core Quantitative Competencies
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {msc.highlights.map((h) => (
-                    <span
-                      key={h}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
-                    >
+                    <Chip key={h} variant="eucalyptus">
                       {h}
-                    </span>
+                    </Chip>
                   ))}
                 </div>
               </div>
@@ -114,14 +112,11 @@ export function Education() {
                 <span className="font-mono text-[10px] text-text-tertiary uppercase tracking-wider block mb-2.5">
                   Foundational Knowledge
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {bsc.highlights.map((h) => (
-                    <span
-                      key={h}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
-                    >
+                    <Chip key={h} variant="eucalyptus">
                       {h}
-                    </span>
+                    </Chip>
                   ))}
                 </div>
               </div>

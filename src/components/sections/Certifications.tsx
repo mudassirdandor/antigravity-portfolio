@@ -5,6 +5,7 @@ import {
   TOTAL_CREDENTIALS_STATEMENT,
   ADDITIONAL_CREDENTIAL_AREAS,
 } from '../../data/certifications';
+import { Chip } from '../ui/Chip';
 
 export function Certifications() {
   return (
@@ -50,9 +51,9 @@ export function Certifications() {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="font-mono text-xs font-semibold text-pine px-2 py-0.5 rounded bg-eucalyptus border border-border-subtle">
+                  <Chip variant="eucalyptus" className="font-semibold text-pine">
                     {cert.issuer}
-                  </span>
+                  </Chip>
                   <span className="font-mono text-[11px] text-text-tertiary">
                     Featured Credential
                   </span>
@@ -68,14 +69,11 @@ export function Certifications() {
               </div>
 
               <div className="pt-3 border-t border-border-subtle">
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {cert.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-2 py-0.5 text-[10px] sm:text-[11px] font-mono rounded bg-eucalyptus/40 text-text-secondary border border-border-subtle"
-                    >
+                    <Chip key={skill} variant="eucalyptus">
                       {skill}
-                    </span>
+                    </Chip>
                   ))}
                 </div>
               </div>

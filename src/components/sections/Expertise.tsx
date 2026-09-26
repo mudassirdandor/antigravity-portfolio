@@ -1,6 +1,7 @@
 import { Container } from '../layout/Container';
 import { SectionFrame } from '../layout/SectionFrame';
 import { EXPERTISE_PILLARS, type ExpertisePillar } from '../../data/expertise';
+import { Chip } from '../ui/Chip';
 
 // Meaningful visual artifacts for each analytical pillar
 function PillarArtifact({ pillarId }: { pillarId: string }) {
@@ -227,14 +228,14 @@ export function Expertise() {
 
                 {/* Core Competencies Badges */}
                 <ul
-                  className="flex flex-wrap gap-1.5 list-none p-0 m-0 mb-2"
+                  className="flex flex-wrap gap-2 list-none p-0 m-0 mb-2"
                   aria-label={`Core competencies for ${pillar.title}`}
                 >
                   {pillar.capabilities.map((cap) => (
                     <li key={cap}>
-                      <span className="inline-block px-2.5 py-1 text-[11px] font-mono rounded bg-eucalyptus/50 text-text-secondary border border-border-subtle">
+                      <Chip variant="eucalyptus">
                         {cap}
-                      </span>
+                      </Chip>
                     </li>
                   ))}
                 </ul>
